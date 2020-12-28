@@ -1,0 +1,23 @@
+{
+  "name": "EspHomeClient",
+  "keywords": "mqtt,wifi,iot",
+  "authors": [
+    {
+      "name": "Thomas Pöhlmann",
+      "maintainer": true
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perryrh0dan/EspHomeClient.git"
+  },
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": ["espressif8266", "espressif32"],
+  "dependencies": [
+    {
+      "name": "PubSubClient",
+      "platforms": ["espressif8266", "espressif32"]
+    }
+  ]
+}
