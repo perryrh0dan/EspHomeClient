@@ -6,9 +6,20 @@
   ESP8266/ESP32 support library for WiFi and MQTT
 </h4>
 
+## Description
+
+This library is intended to encapsulate the handling of WiFi and MQTT connections of an ESP8266/ESP32. Following thing will be handled by the library:
+
+- Connecting to WiFi network
+- Connecting to MQTT broker
+- Three different mqtt topic types cmnd/stat/tele
+- Automatically detecting connection lost either from the WiFi client or the MQTT broker and it will retry a connection automatically.
+- Subscribing/unsubscrubing to/from MQTT topics by a friendly callback system.
+
 ## Contents
 
-- [Dependency](#dependeny)
+- [Description](#description)
+- [Dependency](#dependency)
 - [Install](#install)
 - [Usage](#usage)
 - [Development](#development)
@@ -32,7 +43,7 @@ EspHomeClient client(
   "MQTTBroker",     // MQTT Broker server ip
   "MQTTUsername",   // Optional
   "MQTTPassword",   // Optional
-  "MQTTClient"      // Client name that uniquely identify your device
+  "MQTTClient"      // Client name that uniquely identify your device is used for topic generation
 );
 
 void setup() {}
