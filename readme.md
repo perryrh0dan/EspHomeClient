@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  ESP8266/ESP32 support library for MQTT
+  ESP8266/ESP32 support library for WiFi and MQTT
 </h4>
 
 ## Contents
