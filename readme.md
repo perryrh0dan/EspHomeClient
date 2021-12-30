@@ -32,6 +32,14 @@ The MQTT communication depends on the PubSubClient Library (https://github.com/k
 
 ## Install
 
+Clone the repository and create a symbolic link inside of the arduino library directory:
+
+### Windows
+
+``` cmd
+mklink /D C:\Users\thomas\Documents\Arduino\libraries\PubSubClient D:\Dev\pubsubclient\
+```
+
 ## Usage
 
 ```c++
