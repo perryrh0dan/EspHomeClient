@@ -22,6 +22,7 @@ This library is intended to encapsulate the handling of WiFi and MQTT connection
 - [Dependency](#dependency)
 - [Install](#install)
 - [Usage](#usage)
+- [Subscribe & Publish](#subscribe--publish)
 - [Development](#development)
 - [Team](#team)
 - [License](#license)
@@ -36,7 +37,7 @@ Clone the repository and create a symbolic link inside of the arduino library di
 
 ### Windows
 
-``` cmd
+```cmd
 mklink /D C:\Users\thomas\Documents\Arduino\libraries\PubSubClient D:\Dev\pubsubclient\
 ```
 
@@ -76,11 +77,35 @@ void loop() {
 }
 ```
 
+## Subscribe & Publish
+
+The MQTT format used by this library to subscribe and send messages contains of 3 parts:
+
+`<prefix>/<topic>/<action>`
+
+Beside subscribing to commands you can also publish message. The following types/prefix are supported.
+
+### Prefix
+
+| prefix | description                               |
+| ------ | ----------------------------------------- |
+| cmnd   | send a command                            |
+| tele   | send telemetry data                       |
+| stat   | send status information like power ON/OFF |
+
+### Topic
+
+The topic must be made unique by the user. It can be called `office` but it could also be called `office_light_1` as long as the user knows what it is and where to find it.
+
+### Action
+
+The action defines which command is to be executed on the target device, or in the case of status or telemetry messages, it defines the context of the message. E.g. `stat/office_light_1/power OFF`. Tells us that the light in the office is currently off.
+
 ## Development
 
 Create a symbolic link to the 'EspHomeClient' library in your arduino libraries directory
 
-``` bash
+```bash
 ln -s /home/thomas/dev/esp8266/EspHomeClient /home/thomas/Arduino/libraries/
 ```
 
